@@ -1,5 +1,6 @@
 const { Keystone } = require('@keystonejs/keystone');
-const { Text, DateTime } = require('@keystonejs/fields');
+const { Text, DateTime, Integer, CloudinaryImage } = require('@keystonejs/fields');
+const { CloudinaryAdapter } = require('@keystonejs/file-adapters');
 const { GraphQLApp } = require('@keystonejs/app-graphql');
 const { AdminUIApp } = require('@keystonejs/app-admin-ui');
 const { StaticApp } = require('@keystonejs/app-static');
@@ -32,6 +33,25 @@ keystone.createList('Fridge', {
       yearRangeTo: 2018,
       yearPickerType: 'auto',
     }
+  }
+})
+
+
+const cloudinaryAdapter = new CloudinaryAdapter({
+  cloudName: "dtiupisqk",
+  apiKey: 116611895117877,
+  apiSecret: "ENLB9SERQgz8zkUJpKaYE0aL6mo",
+  folder: 'dumb-fridge-server',
+});
+
+keystone.createList('Food', {
+  schemaDoc: 'Food expire duration',
+  fields: {
+    name: { type: Text, schemaDoc: 'Food title'},
+    duration: {
+      type: Integer, schemaDoc: 'Food duration'
+    },
+    image: { type: CloudinaryImage, adapter: cloudinaryAdapter },
   }
 })
 
