@@ -11,8 +11,10 @@ const PROJECT_NAME = "dumb-fridge-server";
 
 
 const keystone = new Keystone({
-  name: PROJECT_NAME,
-  adapter: new Adapter(),
+    name: PROJECT_NAME,
+    adapter: new Adapter({
+        mongoUri: "mongodb+srv://neothesecond1404:NeoTheSecond1404^^@dumb-fridge-server-zdlza.mongodb.net/test?retryWrites=true&w=majority"
+    }),
 });
 
 keystone.createList('Todo', {
