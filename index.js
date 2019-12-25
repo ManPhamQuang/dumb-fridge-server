@@ -43,7 +43,7 @@ const cloudinaryAdapter = new CloudinaryAdapter({
   cloudName: "dtiupisqk",
   apiKey: "116611895117877",
   apiSecret: "ENLB9SERQgz8zkUJpKaYE0aL6mo",
-  folder: 'dumb-fridge-server'
+  folder: "dumb-fridge-server"
 });
 
 keystone.createList('Food', {
