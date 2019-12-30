@@ -54,6 +54,11 @@ keystone.createList('Food', {
       type: Integer, schemaDoc: 'Food duration'
     },
     image: { type: CloudinaryImage, adapter: cloudinaryAdapter },
+    entryDate: { 
+      type: DateTime,
+      format: 'DD/MM/YYYY h:mm A',
+      yearPickerType: 'auto',
+    },
     quantity: { type: Integer, schemaDoc: "amount of item"}
   }
 })
