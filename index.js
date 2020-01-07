@@ -83,6 +83,14 @@ keystone.createList("Recipe", {
   }
 });
 
+keystone.createList("User", {
+  schemaDoc: "Users",
+  fields: {
+    name: { type: Text, schemaDoc: "user's name" },
+    expoToken: { type: Text, schemaDoc: "expo token for push notification" }
+  }
+});
+
 module.exports = {
   keystone,
   apps: [
